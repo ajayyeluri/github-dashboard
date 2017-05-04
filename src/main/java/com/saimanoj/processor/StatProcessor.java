@@ -74,12 +74,16 @@ public class StatProcessor extends  Thread {
                 getCommits(repoOwner, repoName, commitApiParams);
         logger.debug("iteration for list of commits starts");
         for(int i=0;i<commitList.size(); i++){
-           Stats stats = githubHttpClientUtils.
-                   getCommitDetails(commitList.get(i));
-           stats.setRepoName(repoName);
-           stats.setRepoOwner(repoOwner);
-           githubStatService.saveCommitDetails(stats);
-           logger.info("added stats  "+stats.toString());
+            try {
+                Stats stats = githubHttpClientUtils.
+                        getCommitDetails(commitList.get(i));
+                stats.setRepoName(repoName);
+                stats.setRepoOwner(repoOwner);
+                githubStatService.saveCommitDetails(stats);
+                logger.info("added stats  " + stats.toString());
+            } catch ( Exception ex) {
+                logger.warn(ex.getMessage(), ex );
+            }
 
         }
 

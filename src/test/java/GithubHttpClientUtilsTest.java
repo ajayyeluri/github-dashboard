@@ -17,14 +17,14 @@ public class GithubHttpClientUtilsTest {
     GithubHttpClientUtils test = new GithubHttpClientUtils();
     Commit commit = new Commit();
     //test case for getCommits method
-    @Test
-    public void getCommitsTest(){
-
-        List<Commit> list =  test.getCommits("shrimanoz" , "TestProject", null);
-        for(int i=0;i<list.size();i++){
-            Commit commit = list.get(i);
-            System.out.println("The Url is :"+commit.getUrl()+" "+ "The Sha Value is :" +commit.getSha());
-        }
+//    @Test
+//    public void getCommitsTest(){
+//
+//        List<Commit> list =  test.getCommits("shrimanoz" , "TestProject", null);
+//        for(int i=0;i<list.size();i++){
+//            Commit commit = list.get(i);
+//            System.out.println("The Url is :"+commit.getUrl()+" "+ "The Sha Value is :" +commit.getSha());
+//        }
     }
 
 //    @Test
@@ -38,4 +38,5 @@ public class GithubHttpClientUtilsTest {
 //        System.out.println(testResult);
 //    }
 
-}
+
+

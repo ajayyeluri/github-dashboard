@@ -9,6 +9,7 @@ public class Commit {
 
     Stats stats;
 
+    String sha, url ;
 
     public Stats getStats() {
         return stats;
@@ -17,8 +18,6 @@ public class Commit {
     public void setStats(Stats stats) {
         this.stats = stats;
     }
-
-    String sha, url ;
 
 
     public String getSha() {
